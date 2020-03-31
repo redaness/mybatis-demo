@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+    <properties resource="data.properties">
+        <!--   property会被data.properties中的内容覆盖     -->
+        <property name="username" value="rfewrg"/>
+        <property name="password" value="gre"/>
+    </properties>
+    
+    <settings>
+        <setting name="cacheEnabled" value="true"/>
+        <setting name="useGeneratedKeys" value="true"/>
+        <setting name="logImpl" value="STDOUT_LOGGING"/>
+    </settings>
+
+    <typeAliases>
+        <typeAlias type="com.reda.entity.User" alias="User" />
+    </typeAliases>
+
+    <objectFactory type="com.reda.objectfactory.MyObjectFactory"></objectFactory>
+    
+    <plugins>
+        <plugin interceptor="com.reda.interceptor.MyInterceptor">
+            <property name="value1" value="testetste"/>
+        </plugin>
+    </plugins>
+
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driver" value="${driver}"/>
+                <property name="url" value="${url}"/>
+                <property name="username" value="${username}"/>
+                <property name="password" value="${password}"/>
+            </dataSource>
+        </environment>
+    </environments>
+    <mappers>
+        <mapper class="com.reda.mapper.TestMapper" />
+        <mapper resource="mapper/test2Mapper.xml" />
+    </mappers>
+</configuration>
