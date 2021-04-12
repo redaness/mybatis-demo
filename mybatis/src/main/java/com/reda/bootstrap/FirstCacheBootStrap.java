@@ -10,9 +10,9 @@ public class FirstCacheBootStrap {
         try(SqlSession session = BaseBootStrap.getSession(true)) {
             Test2Mapper mapper = session.getMapper(Test2Mapper.class);
 
-            User user = mapper.findById(1);
+            User user = mapper.findById(7);
             user.setName("cache");
-            User user2 = mapper.findById(1);
+            User user2 = mapper.findById(7);
             // 一级缓存命中
             System.out.println(user == user2);
             System.out.println(user2.getName());

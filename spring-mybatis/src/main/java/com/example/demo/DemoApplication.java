@@ -3,6 +3,7 @@ package com.example.demo;
 import com.example.demo.entity.User;
 import com.example.demo.mapper.TestMapper;
 import com.example.demo.service.TestService;
+import com.example.demo.service.itfs.ITest2Service;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -25,9 +26,10 @@ public class DemoApplication {
 
 
     @Bean
-    public CommandLineRunner run (TestService testService) {
+    public CommandLineRunner run (TestService testService,ITest2Service test2Service) {
         return (args) -> {
             testService.doJob();
+            test2Service.doJob2();
         };
     }
 

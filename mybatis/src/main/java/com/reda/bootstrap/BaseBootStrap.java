@@ -28,7 +28,7 @@ public class BaseBootStrap {
         SqlSessionFactory sqlSessionFactory = builder.build(config);
         SqlSession sqlSession = sqlSessionFactory.openSession();
         TestMapper testMapper = sqlSession.getMapper(TestMapper.class);
-        System.out.println(testMapper.findNameById(1));
+        System.out.println(testMapper.findNameById(7));
     }
 
     public static SqlSession getSession(boolean autoCommit) {

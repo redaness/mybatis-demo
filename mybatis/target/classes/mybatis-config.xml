@@ -44,3 +44,4 @@
         <mapper resource="mapper/test2Mapper.xml" />
     </mappers>
 </configuration>
+
