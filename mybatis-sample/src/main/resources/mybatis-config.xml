@@ -39,5 +39,6 @@
         <mapper resource="mapper/OrderItemMapper.xml"/>
         <mapper resource="mapper/OrderMapper.xml"/>
         <mapper resource="mapper/ProductMapper.xml"/>
+        <mapper class="learn.reda.dao.MyMapper"/>
     </mappers>
 </configuration>
