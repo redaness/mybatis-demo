@@ -19,6 +19,9 @@
         <typeAlias type="learn.reda.domain.OrderItem" alias="OrderItem"/>
         <typeAlias type="learn.reda.domain.Product" alias="Product"/>
     </typeAliases>
+    <plugins>
+        <plugin interceptor="learn.reda.Interceptor.MyInterceptor1"/>
+    </plugins>
     <environments default="development">
         <environment id="development">
             <!-- 配置事务管理器的类型 -->
@@ -32,6 +35,7 @@
             </dataSource>
         </environment>
     </environments>
+
     <!-- 配置映射配置文件的位置 -->
     <mappers>
         <mapper resource="mapper/CustomerMapper.xml"/>
